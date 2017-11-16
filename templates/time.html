@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<p>{{ moment(current_time).format('LLL') }}</p>
+<p>{{ moment(current_time).fromNow(refresh=True) }}</p>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "bootstrap/base.html"  %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static',filename = 'untitled.png') }}"  type='image/x-icon'/>
+<link rel="icon" href="{{ url_for('static',filename = 'untitled.png')  }}" type="image/x-icon"/>
+{% endblock %}
+
+
+{% block content%}
+<div class="container">
+	<div class="alert alert-warning">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		{{message}}
+	</div>
+
+
+	{% block page_content %} {% endblock %}
+</div>
+{%endblock%}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
+
+

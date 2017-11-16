@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky - {{ user.username }}{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    {% if user.username %}<p style = "position:relative; left:400px;top:0px; font-size: 32px;color:black;"><strong> {{ user.username}}</strong></p>{% endif %}
+
+</div>
+<div class="col-md-4">
+	<p><image src="../static/11.png" align = center width="200" height="200" style = "position:relative; left:100px;"/></p>
+
+</div>
+
+<div>
+    <strong><br>{% if user.phone %}<p>Phone: <span style = "color:blue;">{{ user.phone }}</span></p>{% endif %}<br>
+    {% if user.location %}<p>Location: <span style = "color:blue;">{{ user.location }}</span></p>{% endif %}<br>
+    {% if user.about_me %}<p>About me: <span style = "color:blue;">{{ user.about_me  }}</span></p>{% endif %}<br></strong>
+    <p>The register time is {{ moment(user.current_time).format('LLL') }}.</p>
+</div>
+<footer>
+	<a href = 'http://127.0.0.1:5000'>回到首页</a>
+{% endblock %}
