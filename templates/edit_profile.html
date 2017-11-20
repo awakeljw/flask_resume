@@ -7,10 +7,21 @@
 <div class="page-header">
     <h1>Edit Your Profile</h1>
 </div>
-<div class="col-md-4">
-    {{ wtf.quick_form(form) }}
 
+<div class="col-md-3">
+	{{ wtf.quick_form(form2) }}
+	{% if filename %} {{ filename }} {% endif %}
+	{% if file_url %}{% if file_url %} {% endif%}
+	<br><img src="{{ file_url }}">
+	{% endif %}
 </div>
-<p>The local time date and time is {{ moment(current_time).format('LLL') }}.</p>
+
+<div class="col-md-4">
+	
+    {{ wtf.quick_form(form1) }}
+	<p>The local time date and time is {{ moment(current_time).format('LLL') }}.</p>
+</div>
+
+
 
 {% endblock %}

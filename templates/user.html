@@ -9,8 +9,11 @@
 
 </div>
 <div class="col-md-4">
-	<p><image src="../static/11.png" align = center width="200" height="200" style = "position:relative; left:100px;"/></p>
+	{% if file_url %}
+	<p><image src="{{ file_url }}" align = center width="200" height="200" style = "position:relative; left:100px;"/></p>
+	{% endif %}
 
+	<br>{{ wtf.quick_form(form2) }}
 </div>
 
 <div>
